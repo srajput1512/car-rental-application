@@ -1,0 +1,50 @@
+{{totalCarSearchResult}} cars found
+<ng-container  *ngFor="let result of carDetails">
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="car-info">
+                <div class="car-image">
+                    <img width="100px" src="{{result.vehicle.image}}">
+                </div>
+                <div class="car-details">
+                    <h5>{{result.vehicle.type}}</h5>
+                    <div class="car-description">
+                        <p>{{result.vehicle.name}}</p>
+                    </div>
+                    <div class="car-otherinfo">
+                        <div class="people">
+                            <i class="material-icons"> people </i> <span
+                                class="icon-text">{{result.vehicle.specifications.passengerCapacity}}
+                            </span>
+                        </div>
+                        <div class="bag">
+                            <i class="material-icons"> luggage </i> <span class="icon-text">
+                                {{result.vehicle.specifications.baggageCapacity}}
+                            </span>
+                        </div>
+                        <div class="bag">
+                            <i class="material-icons"> speed </i> <span class="icon-text">{{result.unlimitedMileage
+                                ?
+                                'Unlimited miles' : 'Limited miles'}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cancellation">
+                <span class="free-cancellation">Free cancellation</span> until
+                {{result.cancellationDetails.freeCancellationEndDate | date: 'fullDate'}}
+            </div>
+            <hr>
+            <div class="price-perday">
+                <span class="per-day-avg">${{result.fare.perDay}}</span> avg/day
+            </div>
+            <div class="price-total">
+                Total(23 days): ${{result.fare.totalAmount}}
+            </div>
+        </div>
+    </div>
+</ng-container>
+<div>
+    <button type="button" class="btn btn-outline-primary sort-btn" routerLink="/cars-sort" >Sort</button>
+</div>

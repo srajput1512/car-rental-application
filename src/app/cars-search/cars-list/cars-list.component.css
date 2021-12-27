@@ -1,0 +1,57 @@
+
+.car-otherinfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 13px;
+}
+
+.car-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.car-image {
+    margin-right: 15px;
+}
+
+.price-perday {
+    margin-bottom: 5px;
+}
+
+.free-cancellation, .per-day-avg {
+    color: #73A57B;
+    font-weight: bold;
+}
+
+.cancellation, .price-perday, .price-total {
+    font-size: 14px;
+}
+
+.car-description {
+    font-size: 16px;
+}
+
+.icon-text {
+    vertical-align: middle;
+    margin-left: 3px;
+}
+
+.material-icons {
+    vertical-align: middle;
+}
+
+.sort-btn {
+    position: fixed;
+    right: 50%;
+    bottom: 3%;
+  }
+
+
+
+
+
+
+

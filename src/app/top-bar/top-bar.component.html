@@ -1,0 +1,20 @@
+<a class="button"><i class="material-icons">menu</i></a>
+
+<a [routerLink]="['/']">
+  <div [ngClass]="formData.pickupLocation ? 'align-items-cars' : 'align-items-cars-2'">
+    <h2>Travtor</h2>
+    <ng-container *ngIf="!isObjEmpty">
+      <h6 class="car-details">{{formData.pickupLocation}}</h6>
+      <h6 class="car-details">{{formData.pickupDate | date:'fullDate'}}, {{formData.pickupTime}} -
+        {{formData.dropOffDate |
+        date:'fullDate'}}, {{formData.dropOffTime}}</h6>
+    </ng-container>
+  </div>
+</a>
+<a class="button"><i class="material-icons">shopping_cart</i></a>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

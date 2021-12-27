@@ -1,0 +1,43 @@
+{
+  "name": "mat-timepicker",
+  "version": "4.1.1",
+  "peerDependencies": {
+    "@angular/common": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "tslib": "^1.10.0"
+  },
+  "dependencies": {
+    "@angular/animations": "^9.1.4",
+    "@angular/cdk": "^9.2.1",
+    "@angular/common": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "@angular/forms": "^9.1.4",
+    "@angular/material": "^9.2.1",
+    "@angular/platform-browser": "^9.1.4",
+    "rxjs": "^6.5.5",
+    "tslib": "^1.11.1",
+    "zone.js": "^0.10.3"
+  },
+  "author": {
+    "name": "Iliya Idakiev",
+    "url": "https://developers.google.com/community/experts/directory/profile/profile-iliya_idakiev"
+  },
+  "homepage": "https://github.com/IliaIdakiev/angular-material-timepicker",
+  "license": "MIT",
+  "keywords": [
+    "time",
+    "picker",
+    "timepicker",
+    "material timepicker",
+    "angular material",
+    "angular",
+    "angular 2",
+    "angular 3",
+    "angular 4",
+    "angular 5",
+    "angular 6",
+    "angular 7",
+    "angular 8",
+    "angular 9"
+  ]
+}

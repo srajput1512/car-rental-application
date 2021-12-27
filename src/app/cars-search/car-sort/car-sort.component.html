@@ -1,0 +1,11 @@
+<div class="form-row">
+    <div class="form-group col">
+        <div class="radio" *ngFor="let sortValue of sortArray;let i = index">
+            <div class="custom-control custom-radio">
+                <input id="sortCar_{{i}}" type="radio" class="custom-control-input" [value]="i"
+                    (change)="handleChangeCarSort(sortValue)" name="sortCar" >
+                <label class="custom-control-label" for="sortCar_{{i}}">{{sortValue}}</label>
+            </div>
+        </div>
+    </div>
+</div>

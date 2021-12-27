@@ -1,0 +1,6 @@
+.custom-radio{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 40px 0px 0px 0px;
+}

@@ -1,0 +1,54 @@
+
+.search-car-btn {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown:before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #000;
+}
+
+/* Color error text */
+.color-error-text{
+    color: rgb(214, 23, 23);
+}
+
+/* Override material css */
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+    border: 1px solid #CED4DA;
+    padding: 0 !important;
+    height: 40px !important;
+}
+
+
+::ng-deep .mat-form-field-underline {
+    transform: scale3d(0, 1.0001, 1) !important;
+ }
+
+ ::ng-deep .mat-form-field {
+    width: 100% !important;
+}
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .5em 0 .5em 0;
+}
+
+
+::ng-deep .mat-toolbar.mat-primary {
+    background: lightgrey !important;
+}
+
+

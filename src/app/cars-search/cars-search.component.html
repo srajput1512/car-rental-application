@@ -1,0 +1,101 @@
+<div class="scroll">
+    <form [formGroup]="carRentalSearchForm" (ngSubmit)="searchCarForRental()">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="pickupLocation">PICK-UP LOCATION</label>
+                <input type="text" class="form-control" formControlName="pickupLocation" id="pickupLocation"
+                    list="location" />
+                <datalist id="location">
+                    <option *ngFor="let loc of locationAddress">{{loc}}</option>
+                </datalist>
+                <div *ngIf="submitted && f['pickupLocation'].errors">
+                    <div *ngIf="f['pickupLocation'].errors['required']" class="color-error-text">Enter loaction</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label for="pickupDate">PICK-UP DATE</label>
+                <mat-form-field appearance="fill">
+                    <input matInput formControlName="pickupDate" [matDatepicker]="pickupDate">
+                    <mat-datepicker-toggle matSuffix [for]="pickupDate"></mat-datepicker-toggle>
+                    <mat-datepicker #pickupDate></mat-datepicker>
+                </mat-form-field>
+                <div *ngIf="submitted && f['pickupDate'].errors">
+                    <div *ngIf="f['pickupDate'].errors['required']" class="color-error-text">Select pickup date</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="dropOffDate">DROP-OFF DATE</label>
+                <mat-form-field appearance="fill">
+                    <input matInput formControlName="dropOffDate" [matDatepicker]="dropOffDate">
+                    <mat-datepicker-toggle matSuffix [for]="dropOffDate"></mat-datepicker-toggle>
+                    <mat-datepicker #dropOffDate></mat-datepicker>
+                </mat-form-field>
+                <div *ngIf="submitted && f['dropOffDate'].errors">
+                    <div *ngIf="f['dropOffDate'].errors['required']" class="color-error-text">Select dropoff date</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label for="pickupTime">PICK-UP TIME</label>
+                <mat-form-field appearance="outline">
+                    <input type="text" formControlName="pickupTime" matInput [ngxMatTimepicker]="pickupTime"
+                        [required]="required" readonly [formControl]="formControlItem" />
+                    <mat-icon matPrefix *ngIf="formControlItem.value && !formControlItem.disabled && !required"
+                        (click)="onClear($event)">
+                        close
+                    </mat-icon>
+                    <mat-icon matSuffix *ngIf="!formControlItem.disabled" (click)="openFromIcon(pickupTime)">
+                        schedule
+                    </mat-icon>
+                </mat-form-field>
+                <div *ngIf="submitted && f['pickupTime'].errors">
+                    <div *ngIf="f['pickupTime'].errors['required']" class="color-error-text">Select pickup time</div>
+                </div>
+                <ngx-mat-timepicker #pickupTime></ngx-mat-timepicker>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="dropOffTime">DROP-OFF TIME</label>
+                <mat-form-field appearance="outline">
+                    <input type="text" formControlName="dropOffTime" matInput [ngxMatTimepicker]="dropOffTime"
+                        [required]="required" readonly [formControl]="formControlItem" />
+                    <mat-icon matPrefix *ngIf="formControlItem.value && !formControlItem.disabled && !required"
+                        (click)="onClear($event)">
+                        close
+                    </mat-icon>
+                    <mat-icon matSuffix *ngIf="!formControlItem.disabled" (click)="openFromIcon(dropOffTime)">
+                        schedule
+                    </mat-icon>
+                </mat-form-field>
+                <div *ngIf="submitted && f['dropOffTime'].errors">
+                    <div *ngIf="f['dropOffTime'].errors['required']" class="color-error-text">Select dropoff time</div>
+                </div>
+                <ngx-mat-timepicker #dropOffTime></ngx-mat-timepicker>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="driverAge">AGE OF DRIVER</label>
+                <div class="dropdown">
+                    <select formControlName="driverAge" name="driverAge" id="driverAge" class="form-control">
+                        <option value="">-- Select Age --</option>
+                        <option *ngFor="let age of driverAge" value="{{age}}">{{age}}</option>
+                    </select>
+                </div>
+                <div *ngIf="submitted && f['driverAge'].errors">
+                    <div *ngIf="f['driverAge'].errors['required']" class="color-error-text">Select dropoff time</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <button class="btn btn-primary search-car-btn">Search Rental Cars</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<router-outlet></router-outlet>
